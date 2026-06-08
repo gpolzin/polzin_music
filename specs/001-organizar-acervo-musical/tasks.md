@@ -150,12 +150,12 @@
 
 **Purpose**: Hardening, validation, and final consistency
 
-- [ ] T062 [P] Add documentation updates and architecture notes in specs/001-organizar-acervo-musical/quickstart.md and docs/architecture.md
-- [ ] T063 Run end-to-end quickstart validation scenarios in specs/001-organizar-acervo-musical/quickstart.md
-- [ ] T064 [P] Add regression tests for duplicate decision replay and re-import behavior in tests/integration/importer/DuplicateReplayIT.java
-- [ ] T065 Validate performance budgets (import throughput, sync SLA, hotkey latency) in tests/integration/performance/PerformanceBudgetIT.java
-- [ ] T066 [P] Perform UX consistency review checklist updates in specs/001-organizar-acervo-musical/checklists/requirements.md
-- [ ] T067 Security and resilience hardening for provider errors and filesystem failures in src/application/common/ResiliencePolicy.java
+- [X] T062 [P] Add documentation updates and architecture notes in specs/001-organizar-acervo-musical/quickstart.md and docs/architecture.md
+- [X] T063 Run end-to-end quickstart validation scenarios in specs/001-organizar-acervo-musical/quickstart.md
+- [X] T064 [P] Add regression tests for duplicate decision replay and re-import behavior in tests/integration/importer/DuplicateReplayIT.java
+- [X] T065 Validate performance budgets (import throughput, sync SLA, hotkey latency) in tests/integration/performance/PerformanceBudgetIT.java
+- [X] T066 [P] Perform UX consistency review checklist updates in specs/001-organizar-acervo-musical/checklists/requirements.md
+- [X] T067 Security and resilience hardening for provider errors and filesystem failures in src/application/common/ResiliencePolicy.java
 
 ---
 

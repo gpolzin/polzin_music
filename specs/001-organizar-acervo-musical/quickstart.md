@@ -56,3 +56,9 @@ mvn -q -DskipTests=false verify
 ## 10. Definicao de pronto
 - Gates da constituicao aprovados (qualidade, testes, UX, performance, rastreabilidade)
 - Criterios de sucesso SC-001..SC-014 cobertos por evidencia de teste
+
+## 11. Notas de arquitetura
+- Camada de aplicacao concentra regras de negocio e coordenacao dos fluxos de importacao, reproducao, curadoria e sincronizacao.
+- Camada de infraestrutura isola persistencia, sistema de arquivos, agendamento e integracoes externas.
+- A interface de usuario consome servicos de aplicacao sem carregar regras de dominio para manter os fluxos previsiveis e testaveis.
+- Mudancas de resiliência e hardening devem ser validadas junto com regressao de reimportacao, checagem de catalogo e budget de desempenho.

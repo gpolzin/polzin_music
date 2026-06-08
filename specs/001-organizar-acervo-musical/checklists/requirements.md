@@ -33,4 +33,5 @@
 
 - Validation iteration 1: approved.
 - Legacy analysis from D:\polzinMusic\musicas incorporated as explicit requirement (FR-019) and assumptions without constraining implementation stack.
+- UX review refreshed after US4 recommendation, curation, and online monitoring panels were added.
 - Items marked incomplete require spec updates before `/speckit.clarify` or `/speckit.plan`
