@@ -9,8 +9,9 @@
 Construir um sistema desktop cross-platform para importar colecoes MP3 em larga escala,
 enriquecer metadados (incluindo covers), revisar manualmente, organizar arquivos em estrutura
 deterministica com links por pais/cover, reproduzir acervo com hotkeys globais, registrar
-historico de escuta e recomendar albuns com anti-repeticao. O design prioriza jobs retomaveis,
-persistencia local e contratos claros para sincronizacao de catalogo online e regras de
+historico de escuta e recomendar albuns com anti-repeticao. O fluxo de importacao inclui
+resolucao de duplicatas musica por musica com comparacao de qualidade antes da consolidacao final.
+O design prioriza jobs retomaveis, persistencia local e contratos claros para sincronizacao de catalogo online e regras de
 filesystem.
 
 ## Technical Context
@@ -44,6 +45,7 @@ Nao foi escolhido apenas por semelhanca com a implementacao anterior.
 - Garantir compatibilidade de links simbolicos Windows/Linux
 - Respeitar limite de taxa e termos de uso/licenca de cada provedor externo
 - Operar com tolerancia a falhas de rede e retomada por checkpoint
+- Evitar consolidacao automatica de duplicatas sem decisao explicita do usuario
 
 **External Metadata Strategy**:
 - Fonte canonica principal: MusicBrainz (identidade de artista/album/faixa e relacao cover-de)
@@ -62,6 +64,7 @@ Nao foi escolhido apenas por semelhanca com a implementacao anterior.
 **Scale/Scope**:
 - Biblioteca alvo de ate 1TB e centenas de milhares de faixas
 - Fluxos MVP: importar/revisar/organizar + links + player + recomendacao + monitoramento online
+- MVP inclui comparacao de duplicatas por metrica tecnica (tamanho, bitrate, sample rate, duracao)
 
 ## Constitution Check
 
@@ -98,6 +101,7 @@ specs/001-organizar-acervo-musical/
 ├── quickstart.md
 ├── contracts/
 │   ├── catalog-sync-contract.md
+│   ├── duplicate-resolution-contract.md
 │   ├── filesystem-layout-contract.md
 │   └── player-and-recommendation-contract.md
 └── tasks.md

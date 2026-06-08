@@ -20,8 +20,9 @@ mvn clean verify
 1. Abrir tela de importacao.
 2. Selecionar pasta com MP3.
 3. Executar leitura de metadados com fallback (ID3v2 -> ID3v1 -> nome de arquivo/pasta).
-4. Revisar cada faixa e confirmar dados.
-5. Finalizar e validar estrutura de saida:
+4. Resolver duplicatas musica por musica quando detectadas, comparando tamanho e qualidade.
+5. Revisar cada faixa e confirmar dados.
+6. Finalizar e validar estrutura de saida:
    - Artistas/<nome>/<tipo_album>/<ano - album>
    - Faixas no formato NN - Titulo.extensao
 
@@ -29,7 +30,7 @@ mvn clean verify
 1. Confirmar criacao de links por pais em Paises/<pais>/<link artista>.
 2. Confirmar criacao de links por estilo em Estilos/<style_name>/<artist_link>.
 3. Confirmar criacao de links por marcacoes em Marcacoes/<nome_marcacao>/<music_link>.
-2. Confirmar links de cover para artista original quando relacao existir.
+4. Confirmar links de cover para artista original quando relacao existir.
 
 ## 6. Fluxo player e historico (US3)
 1. Reproduzir album no player.
@@ -54,4 +55,4 @@ mvn -q -DskipTests=false verify
 
 ## 10. Definicao de pronto
 - Gates da constituicao aprovados (qualidade, testes, UX, performance, rastreabilidade)
-- Criterios de sucesso SC-001..SC-010 cobertos por evidencia de teste
+- Criterios de sucesso SC-001..SC-014 cobertos por evidencia de teste

@@ -127,6 +127,49 @@
   - RUNNING -> PAUSED | FAILED | COMPLETED
   - PAUSED -> RUNNING | FAILED
 
+## DuplicateGroup
+- Fields:
+  - id (UUID)
+  - import_job_id (FK ImportJob, required)
+  - canonical_hint_title (string, optional)
+  - canonical_hint_artist (string, optional)
+  - canonical_hint_duration_seconds (int, optional)
+  - status (enum: OPEN, RESOLVED, SKIPPED)
+  - created_at, resolved_at (datetime, optional)
+- Relationships:
+  - 1:N with DuplicateCandidate
+  - 1:1 with DuplicateResolution (optional while OPEN)
+- Validation rules:
+  - A group must have at least 2 candidates
+
+## DuplicateCandidate
+- Fields:
+  - id (UUID)
+  - duplicate_group_id (FK DuplicateGroup, required)
+  - track_id (FK Track, optional if not persisted yet)
+  - source_file_path (string, required)
+  - file_size_bytes (long, required)
+  - bitrate_kbps (int, optional)
+  - sample_rate_hz (int, optional)
+  - duration_seconds (int, optional)
+  - codec (string, optional)
+  - quality_score (decimal 0..1, optional)
+- Validation rules:
+  - source_file_path must be unique within the same duplicate group
+
+## DuplicateResolution
+- Fields:
+  - id (UUID)
+  - duplicate_group_id (FK DuplicateGroup, required, unique)
+  - selected_candidate_id (FK DuplicateCandidate, required)
+  - discarded_candidate_ids (UUID[], required)
+  - decided_by (enum: USER, AUTO_RULE)
+  - decision_reason (string, optional)
+  - decided_at (datetime, required)
+- Validation rules:
+  - selected candidate must belong to duplicate group
+  - discarded candidates must belong to duplicate group and exclude selected candidate
+
 ## OnlineCatalogCheck
 - Fields:
   - id (UUID)

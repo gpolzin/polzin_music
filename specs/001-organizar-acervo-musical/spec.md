@@ -25,6 +25,7 @@ Como colecionador musical, quero importar uma pasta com arquivos de audio, revis
 3. **Given** metadados locais lidos, **When** o sistema consulta um webservice gratuito de catalogo musical, **Then** ele apresenta sugestoes para revisao humana por arquivo antes da gravacao final.
 4. **Given** revisao concluida, **When** o usuario confirma a organizacao, **Then** os arquivos sao copiados para a pasta destino configurada seguindo o padrao de artista/tipo de album/ano-nome e numero de faixa com dois digitos.
 5. **Given** exista capa local na pasta de origem ou imagem encontrada no Cover Art Archive, **When** o usuario escolhe a arte na revisao, **Then** o sistema embute a arte escolhida nas MP3 organizadas e, se aplicavel, guarda uma copia cache da imagem no album.
+6. **Given** duas ou mais versoes da mesma musica forem detectadas na importacao, **When** o usuario abre a resolucao de duplicatas, **Then** o sistema exibe comparacao faixa a faixa com tamanho de arquivo e indicadores de qualidade para o usuario escolher qual versao manter na pasta organizada.
 
 ---
 
@@ -84,6 +85,8 @@ Como usuario, quero marcar musicas com tags customizadas e avaliar albuns para r
 - Artistas com nomes equivalentes, pseudonimos ou homonimos que possam gerar associacoes incorretas.
 - Diferencas de permissao para criacao de links no Windows e Linux.
 - Caminhos longos, caracteres invalidos para filesystem e conflito de nomes de arquivo no destino.
+- Duplicatas com mesmo nome de musica, mas duracao/bitrate diferentes ou tags conflitantes.
+- Duplicatas de mesma faixa em albuns diferentes (studio, compilacao, ao vivo) que nao devem ser mescladas indevidamente.
 
 ## Requirements *(mandatory)*
 
@@ -112,6 +115,8 @@ Como usuario, quero marcar musicas com tags customizadas e avaliar albuns para r
 - **FR-021**: O sistema MUST organizar o filesystem por estilo musical em `<organizada>/Estilos/<style_name>/<artist_link>`, usando estilos obtidos das fontes externas e nomes normalizados sem acentos.
 - **FR-022**: O sistema MUST organizar o filesystem por marcações de musica em `<organizada>/Marcacoes/<nome_marcacao>/<music_link>`, com nomes normalizados sem acentos.
 - **FR-023**: O sistema MUST permitir ao usuario escolher a capa do album entre imagem local da pasta de origem e imagem obtida do Cover Art Archive, e MUST embutir a arte selecionada nas MP3 organizadas, mantendo opcionalmente uma copia cache da imagem no album.
+- **FR-024**: O sistema MUST detectar duplicatas durante a importacao e oferecer resolucao musica por musica, exibindo comparacao objetiva de versoes (tamanho do arquivo, bitrate, sample rate, duracao e origem) para o usuario escolher qual manter na biblioteca organizada.
+- **FR-025**: O sistema MUST registrar no banco local a decisao de duplicata (versao mantida e descartadas) para auditoria e reprocessamento futuro.
 
 ### Non-Functional Requirements *(mandatory)*
 
@@ -129,6 +134,9 @@ Como usuario, quero marcar musicas com tags customizadas e avaliar albuns para r
 - **EstiloMusical**: Representa um estilo/tag musical consolidado a partir de fontes externas, com nome normalizado e origem da classificacao.
 - **MarcacaoMusica**: Representa uma classificacao customizada aplicada a uma musica e usada para navegacao no filesystem.
 - **CapaAlbum**: Representa a arte escolhida para o album, com origem (local ou Cover Art Archive), caminho/codigo da imagem e status de embutimento nas faixas.
+- **GrupoDuplicata**: Representa um conjunto de candidatas consideradas a mesma faixa no contexto de importacao.
+- **CandidataDuplicata**: Representa cada versao comparada de uma mesma musica, com metrica de qualidade tecnica e origem do arquivo.
+- **ResolucaoDuplicata**: Representa a decisao do usuario sobre qual candidata foi mantida e quais foram descartadas.
 - **RelacaoCover**: Liga faixa cover ao artista original e registra a confianca/origem da associacao.
 - **AtalhoNavegacao**: Representa link de filesystem por pais, relacionamento ou cover, com status por sistema operacional.
 - **EventoEscuta**: Registro temporal de reproducao para calculo de historico e recomendacao.
@@ -151,6 +159,7 @@ Como usuario, quero marcar musicas com tags customizadas e avaliar albuns para r
 - **SC-011**: Pelo menos 90% dos artistas com estilo identificado pelas fontes externas sao espelhados na estrutura `<organizada>/Estilos/<style_name>/<artist_link>` usando nomes normalizados sem acentos.
 - **SC-012**: Pelo menos 90% das marcacoes customizadas ativas das musicas sao espelhadas em `<organizada>/Marcacoes/<nome_marcacao>/<music_link>` usando nomes normalizados sem acentos.
 - **SC-013**: Pelo menos 95% dos albuns com imagem local ou imagem disponivel no Cover Art Archive permitem selecao de arte na revisao e embutem a capa escolhida nas MP3 organizadas.
+- **SC-014**: Em amostra de importacao com duplicatas conhecidas, pelo menos 95% das duplicatas detectadas apresentam comparacao completa (tamanho, bitrate, sample rate e duracao) e permitem decisao explicita do usuario antes da organizacao final.
 
 ## Assumptions
 
