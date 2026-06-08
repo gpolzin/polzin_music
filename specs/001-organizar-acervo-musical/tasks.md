@@ -75,19 +75,19 @@
 
 ### Tests for User Story 2 (REQUIRED)
 
-- [ ] T031 [P] [US2] Add unit tests for filesystem layout mapping rules in tests/unit/filesystem/LayoutMappingTest.java
-- [ ] T032 [P] [US2] Add contract test for country/style/tag link generation in tests/contract/filesystem/LinkLayoutContractTest.java
-- [ ] T033 [P] [US2] Add integration test for cross-OS link regeneration state in tests/integration/filesystem/CrossOsLinkRegenerationIT.java
+- [X] T031 [P] [US2] Add unit tests for filesystem layout mapping rules in tests/unit/filesystem/LayoutMappingTest.java
+- [X] T032 [P] [US2] Add contract test for country/style/tag link generation in tests/contract/filesystem/LinkLayoutContractTest.java
+- [X] T033 [P] [US2] Add integration test for cross-OS link regeneration state in tests/integration/filesystem/CrossOsLinkRegenerationIT.java
 
 ### Implementation for User Story 2
 
-- [ ] T034 [P] [US2] Implement canonical path builder for Paises/Estilos/Marcacoes in src/application/organizer/LayoutPathBuilder.java
-- [ ] T035 [P] [US2] Implement link creation adapter with OS-aware behavior in src/infrastructure/filesystem/LinkService.java
-- [ ] T036 [US2] Implement cover relationship link generation in src/application/organizer/CoverLinkService.java
-- [ ] T037 [US2] Implement style and mark link projection from metadata/tags in src/application/organizer/StyleAndMarkLinkService.java
-- [ ] T038 [US2] Persist link metadata and provenance in src/infrastructure/db/repository/LinkRepository.java
-- [ ] T039 [US2] Implement relationship navigation indexing service in src/application/library/NavigationIndexService.java
-- [ ] T040 [US2] Implement UI refresh for relationship folders in src/ui/library/LibraryNavigationController.java
+- [X] T034 [P] [US2] Implement canonical path builder for Paises/Estilos/Marcacoes in src/application/organizer/LayoutPathBuilder.java
+- [X] T035 [P] [US2] Implement link creation adapter with OS-aware behavior in src/infrastructure/filesystem/LinkService.java
+- [X] T036 [US2] Implement cover relationship link generation in src/application/organizer/CoverLinkService.java
+- [X] T037 [US2] Implement style and mark link projection from metadata/tags in src/application/organizer/StyleAndMarkLinkService.java
+- [X] T038 [US2] Persist link metadata and provenance in src/infrastructure/db/repository/LinkRepository.java
+- [X] T039 [US2] Implement relationship navigation indexing service in src/application/library/NavigationIndexService.java
+- [X] T040 [US2] Implement UI refresh for relationship folders in src/ui/library/LibraryNavigationController.java
 
 **Checkpoint**: User Stories 1 and 2 both independently functional
 
