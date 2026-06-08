@@ -126,21 +126,21 @@
 
 ### Tests for User Story 4 (REQUIRED)
 
-- [ ] T050 [P] [US4] Add unit tests for recommendation score function in tests/unit/recommendation/RecommendationScoreTest.java
-- [ ] T051 [P] [US4] Add integration test for periodic catalog check workflow in tests/integration/sync/CatalogCheckIT.java
-- [ ] T052 [P] [US4] Add contract test for multi-provider reconciliation outputs in tests/contract/sync/MultiSourceReconciliationContractTest.java
-- [ ] T053 [P] [US4] Add integration test for missing-album notification persistence in tests/integration/sync/MissingAlbumNotificationIT.java
+- [X] T050 [P] [US4] Add unit tests for recommendation score function in tests/unit/recommendation/RecommendationScoreTest.java
+- [X] T051 [P] [US4] Add integration test for periodic catalog check workflow in tests/integration/sync/CatalogCheckIT.java
+- [X] T052 [P] [US4] Add contract test for multi-provider reconciliation outputs in tests/contract/sync/MultiSourceReconciliationContractTest.java
+- [X] T053 [P] [US4] Add integration test for missing-album notification persistence in tests/integration/sync/MissingAlbumNotificationIT.java
 
 ### Implementation for User Story 4
 
-- [ ] T054 [P] [US4] Implement tag/album rating application services in src/application/library/CurationService.java
-- [ ] T055 [US4] Implement recommendation service with anti-repetition penalties in src/application/recommendation/RecommendationService.java
-- [ ] T056 [US4] Implement provider orchestrator for MusicBrainz/Discogs/Wikidata/AcoustID/CAA in src/application/sync/CatalogSyncOrchestrator.java
-- [ ] T057 [US4] Implement periodic scheduler for artist catalog checks in src/infrastructure/scheduler/CatalogCheckScheduler.java
-- [ ] T058 [US4] Implement missing album detection and notification service in src/application/sync/MissingAlbumService.java
-- [ ] T059 [US4] Persist provider references, confidence, and notification records in src/infrastructure/db/repository/CatalogSyncRepository.java
-- [ ] T060 [US4] Implement recommendation and notifications UI panels in src/ui/library/RecommendationsController.java
-- [ ] T061 [US4] Integrate curation inputs into player/library flows in src/ui/library/CurationController.java
+- [X] T054 [P] [US4] Implement tag/album rating application services in src/application/library/CurationService.java
+- [X] T055 [US4] Implement recommendation service with anti-repetition penalties in src/application/recommendation/RecommendationService.java
+- [X] T056 [US4] Implement provider orchestrator for MusicBrainz/Discogs/Wikidata/AcoustID/CAA in src/application/sync/CatalogSyncOrchestrator.java
+- [X] T057 [US4] Implement periodic scheduler for artist catalog checks in src/infrastructure/scheduler/CatalogCheckScheduler.java
+- [X] T058 [US4] Implement missing album detection and notification service in src/application/sync/MissingAlbumService.java
+- [X] T059 [US4] Persist provider references, confidence, and notification records in src/infrastructure/db/repository/CatalogSyncRepository.java
+- [X] T060 [US4] Implement recommendation and notifications UI panels in src/ui/library/RecommendationsController.java
+- [X] T061 [US4] Integrate curation inputs into player/library flows in src/ui/library/CurationController.java
 
 **Checkpoint**: All user stories independently functional
 
