@@ -40,7 +40,11 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- Code Quality Gate: Identify linting, formatting, and maintainability checks that MUST pass.
+- Testing Gate: Define required unit, integration, and regression tests for this feature.
+- UX Consistency Gate: Specify applicable design patterns, copy tone, and accessibility checks.
+- Performance Gate: Define measurable budgets (latency/render/resource) and verification method.
+- Traceability Gate: Map each major design decision to a requirement or constraint in spec.md.
 
 ## Project Structure
 
