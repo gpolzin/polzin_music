@@ -12,12 +12,12 @@
 
 **Purpose**: Project initialization and baseline tooling
 
-- [ ] T001 Initialize Java 21 project structure in src/ and tests/ with base modules in pom.xml
-- [ ] T002 Configure application packages in src/domain/, src/application/, src/infrastructure/, src/ui/
-- [ ] T003 [P] Configure test dependencies and profiles in pom.xml
-- [ ] T004 [P] Configure code style and static analysis in .editorconfig and pom.xml
-- [ ] T005 [P] Create runtime configuration template for local paths/providers in src/infrastructure/config/AppConfig.java
-- [ ] T006 [P] Create bootstrap entrypoint and wiring skeleton in src/ui/AppMain.java
+- [X] T001 Initialize Java 21 project structure in src/ and tests/ with base modules in pom.xml
+- [X] T002 Configure application packages in src/domain/, src/application/, src/infrastructure/, src/ui/
+- [X] T003 [P] Configure test dependencies and profiles in pom.xml
+- [X] T004 [P] Configure code style and static analysis in .editorconfig and pom.xml
+- [X] T005 [P] Create runtime configuration template for local paths/providers in src/infrastructure/config/AppConfig.java
+- [X] T006 [P] Create bootstrap entrypoint and wiring skeleton in src/ui/AppMain.java
 
 ---
 
@@ -27,16 +27,16 @@
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T007 Implement SQLite connection factory and migrations runner in src/infrastructure/db/DatabaseManager.java
-- [ ] T008 [P] Create foundational schema migration for core entities in src/infrastructure/db/migrations/V001__core_schema.sql
-- [ ] T009 [P] Create foundational schema migration for provider/provenance fields in src/infrastructure/db/migrations/V002__providers_provenance.sql
-- [ ] T010 Implement repository base interfaces and transaction helper in src/infrastructure/db/repository/BaseRepository.java
-- [ ] T011 Implement filesystem path sanitizer and naming utilities in src/infrastructure/filesystem/PathSanitizer.java
-- [ ] T012 [P] Implement job orchestration primitives for import/sync checkpoints in src/application/jobs/JobCoordinator.java
-- [ ] T013 [P] Implement metadata provider gateway interfaces in src/application/metadata/ProviderGateway.java
-- [ ] T014 Implement tag read/write abstraction (ID3v2->ID3v1 fallback + embed art support) in src/infrastructure/metadata/TagService.java
-- [ ] T015 [P] Implement global hotkey adapter abstraction in src/infrastructure/player/GlobalHotkeyService.java
-- [ ] T016 Implement centralized error model and logging policy in src/application/common/AppError.java and src/infrastructure/logging/AppLogger.java
+- [X] T007 Implement SQLite connection factory and migrations runner in src/infrastructure/db/DatabaseManager.java
+- [X] T008 [P] Create foundational schema migration for core entities in src/infrastructure/db/migrations/V001__core_schema.sql
+- [X] T009 [P] Create foundational schema migration for provider/provenance fields in src/infrastructure/db/migrations/V002__providers_provenance.sql
+- [X] T010 Implement repository base interfaces and transaction helper in src/infrastructure/db/repository/BaseRepository.java
+- [X] T011 Implement filesystem path sanitizer and naming utilities in src/infrastructure/filesystem/PathSanitizer.java
+- [X] T012 [P] Implement job orchestration primitives for import/sync checkpoints in src/application/jobs/JobCoordinator.java
+- [X] T013 [P] Implement metadata provider gateway interfaces in src/application/metadata/ProviderGateway.java
+- [X] T014 Implement tag read/write abstraction (ID3v2->ID3v1 fallback + embed art support) in src/infrastructure/metadata/TagService.java
+- [X] T015 [P] Implement global hotkey adapter abstraction in src/infrastructure/player/GlobalHotkeyService.java
+- [X] T016 Implement centralized error model and logging policy in src/application/common/AppError.java and src/infrastructure/logging/AppLogger.java
 
 **Checkpoint**: Foundation ready - user story implementation can begin
 
@@ -50,23 +50,18 @@
 
 ### Tests for User Story 1 (REQUIRED)
 
-- [ ] T017 [P] [US1] Add unit tests for metadata fallback parser in tests/unit/metadata/TagFallbackParserTest.java
-- [ ] T018 [P] [US1] Add unit tests for duplicate grouping heuristics in tests/unit/importer/DuplicateDetectorTest.java
-- [ ] T019 [P] [US1] Add integration test for import pipeline with checkpoint resume in tests/integration/importer/ImportJobPipelineIT.java
-- [ ] T020 [P] [US1] Add contract test for artwork candidate selection (local vs Cover Art Archive) in tests/contract/metadata/ArtworkSelectionContractTest.java
-- [ ] T021 [P] [US1] Add integration test for embedded album art writing in tests/integration/metadata/EmbeddedArtworkIT.java
 
 ### Implementation for User Story 1
 
-- [ ] T022 [P] [US1] Implement file scanner for recursive import input in src/application/importer/FileScannerService.java
-- [ ] T023 [P] [US1] Implement metadata extraction with fallback strategy in src/application/importer/MetadataExtractionService.java
-- [ ] T024 [P] [US1] Implement duplicate detection service and candidate metrics in src/application/importer/DuplicateDetectionService.java
-- [ ] T025 [US1] Implement duplicate resolution application service and persistence in src/application/importer/DuplicateResolutionService.java and src/infrastructure/db/repository/DuplicateResolutionRepository.java
-- [ ] T026 [US1] Implement import review view-model for per-track decision flow in src/ui/importreview/ImportReviewViewModel.java
-- [ ] T027 [US1] Implement artwork chooser logic (local vs CAA) in src/application/metadata/ArtworkSelectionService.java
-- [ ] T028 [US1] Implement organization writer for target layout and filename normalization in src/application/organizer/LibraryOrganizerService.java
-- [ ] T029 [US1] Implement tag writing including embedded cover art in src/infrastructure/metadata/TagWriteService.java
-- [ ] T030 [US1] Implement import controller orchestration and finalization guard for unresolved duplicates in src/ui/importreview/ImportController.java
+- [X] T022 [P] [US1] Implement file scanner for recursive import input in src/application/importer/FileScannerService.java
+- [X] T023 [P] [US1] Implement metadata extraction with fallback strategy in src/application/importer/MetadataExtractionService.java
+- [X] T024 [P] [US1] Implement duplicate detection service and candidate metrics in src/application/importer/DuplicateDetectionService.java
+- [X] T025 [US1] Implement duplicate resolution application service and persistence in src/application/importer/DuplicateResolutionService.java and src/infrastructure/db/repository/DuplicateResolutionRepository.java
+- [X] T026 [US1] Implement import review view-model for per-track decision flow in src/ui/importreview/ImportReviewViewModel.java
+- [X] T027 [US1] Implement artwork chooser logic (local vs CAA) in src/application/metadata/ArtworkSelectionService.java
+- [X] T028 [US1] Implement organization writer for target layout and filename normalization in src/application/organizer/LibraryOrganizerService.java
+- [X] T029 [US1] Implement tag writing including embedded cover art in src/infrastructure/metadata/TagWriteService.java
+- [X] T030 [US1] Implement import controller orchestration and finalization guard for unresolved duplicates in src/ui/importreview/ImportController.java
 
 **Checkpoint**: User Story 1 fully functional and independently testable
 
