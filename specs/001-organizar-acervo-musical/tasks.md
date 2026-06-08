@@ -101,18 +101,18 @@
 
 ### Tests for User Story 3 (REQUIRED)
 
-- [ ] T041 [P] [US3] Add unit tests for playback state transitions in tests/unit/player/PlaybackStateMachineTest.java
-- [ ] T042 [P] [US3] Add integration test for listening event persistence in tests/integration/player/ListeningHistoryIT.java
-- [ ] T043 [P] [US3] Add contract test for global play/pause handling latency in tests/contract/player/GlobalHotkeyContractTest.java
+- [X] T041 [P] [US3] Add unit tests for playback state transitions in tests/unit/player/PlaybackStateMachineTest.java
+- [X] T042 [P] [US3] Add integration test for listening event persistence in tests/integration/player/ListeningHistoryIT.java
+- [X] T043 [P] [US3] Add contract test for global play/pause handling latency in tests/contract/player/GlobalHotkeyContractTest.java
 
 ### Implementation for User Story 3
 
-- [ ] T044 [P] [US3] Implement JavaFX MediaPlayer wrapper service in src/infrastructure/player/MediaPlayerService.java
-- [ ] T045 [US3] Implement playback controller and queue handling in src/application/player/PlaybackController.java
-- [ ] T046 [US3] Implement listening history recorder in src/application/player/ListeningHistoryService.java
-- [ ] T047 [US3] Implement hotkey to playback command bridge in src/application/player/HotkeyCommandHandler.java
-- [ ] T048 [US3] Persist playback events and last-listened projections in src/infrastructure/db/repository/PlaybackRepository.java
-- [ ] T049 [US3] Implement player UI bindings and actions in src/ui/player/PlayerController.java
+- [X] T044 [P] [US3] Implement JavaFX MediaPlayer wrapper service in src/infrastructure/player/MediaPlayerService.java
+- [X] T045 [US3] Implement playback controller and queue handling in src/application/player/PlaybackController.java
+- [X] T046 [US3] Implement listening history recorder in src/application/player/ListeningHistoryService.java
+- [X] T047 [US3] Implement hotkey to playback command bridge in src/application/player/HotkeyCommandHandler.java
+- [X] T048 [US3] Persist playback events and last-listened projections in src/infrastructure/db/repository/PlaybackRepository.java
+- [X] T049 [US3] Implement player UI bindings and actions in src/ui/player/PlayerController.java
 
 **Checkpoint**: User Stories 1, 2 and 3 independently functional
 
